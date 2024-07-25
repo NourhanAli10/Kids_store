@@ -32,6 +32,20 @@ class LoginRequest extends FormRequest
         ];
     }
 
+     /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages() :array
+    {
+        return [
+            //email
+            'email.required' => "Email is required",
+            'password.required' => "Password is required",
+        ];
+    }
+
     /**
      * Attempt to authenticate the request's credentials.
      *
