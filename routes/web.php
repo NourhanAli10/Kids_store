@@ -31,17 +31,19 @@ use App\Http\Controllers\store\WishlistController;
 */
 
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+
+Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/my-account', [UserController::class, 'profilePage'])->name('user-profile');
+    Route::post('/change-password', [UserController::class, 'updatePassword'])->name('update-password');
 });
 
-require __DIR__.'/auth.php';
+
+require __DIR__ . '/auth.php';
 
 /////////////////////////////store/////////////////////////
 Route::get("/", [HomeController::class, 'index'])->name('home');
@@ -65,8 +67,6 @@ Route::post('/product/add-to-cart', [CartController::class, 'addToCart'])->name(
 
 //
 
-Route::get('/my-account', [UserController::class, 'profilePage'])->name('user-profile');
-Route::post('/change-password', [UserController::class, 'updatePassword'])->name('update-password');
 
 
 
@@ -75,8 +75,7 @@ Route::post('/change-password', [UserController::class, 'updatePassword'])->name
 
 
 
-
-Route::controller(ProductController::class)->group(function() {
+Route::controller(ProductController::class)->group(function () {
     Route::get("/all-products",  'all_products')->name('all-products');
     Route::get("/new_products", 'new_products')->name('new-products');
 });
@@ -108,90 +107,82 @@ Route::delete('/wishlist', [WishlistController::class, 'destroy'])->name('wishli
 
 // ---------------------------Dashboard---------------------------------- //
 
-Route::get('/admin/dashboard', [DashboardController::class , 'index'])->name('dashboard');
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/admin/logout', [AuthenticatedSessionController::class, 'destroy'])
+        ->name('admin.logout');
+
+
+
+    // Products//
+
+    Route::controller(ProductController::class)->prefix('admin/dashboard/')->name('dashboard.')
+        ->group(function () {
+            Route::get('/all-products', 'index')->name('all_products');
+            Route::get('/products/add', 'create')->name('create_product');
+            Route::post('/products/add', 'store');
+            Route::get("/produc/edit/{id}", 'edit')->name('update-product');
+            Route::put("/product/edit/{id}", 'update');
+            Route::delete("/product/delete/{id}", 'destroy')->name('delete-product');
+        });
+
+
+    //categories//
+
+    Route::controller(CategoryController::class)->prefix('admin/dashboard')->name('admin.')
+        ->group(function () {
+            Route::get("/categories", 'index')->name('categories');
+            Route::get("/categories/add", 'create')->name('add-category');
+            Route::post("/categories/add", 'store');
+            Route::get("/categories/edit/{id}", 'edit')->name('update-category');
+            Route::put("/categories/edit/{id}", 'update');
+            Route::delete("/categories/delete/{id}", 'destroy')->name('delete-category');
+        });
+
+
+    Route::controller(BrandController::class)->prefix('admin/dashboard')->name('dashboard.')
+        ->group(function () {
+            Route::get("/brands", 'index')->name('all-brands');
+            Route::get("/brands/add", 'create')->name('add-brand');
+            Route::post("/brands/add", 'store');
+            Route::get("/brands/edit/{id}", 'edit')->name('update-brand');
+            Route::put("/brands/edit/{id}", 'update');
+            Route::delete("/brands/delete/{id}", 'destroy')->name('delete-brand');
+        });
+
+
+    Route::controller(ColorController::class)->prefix('admin/dashboard')->name('dashboard.')
+        ->group(function () {
+            Route::get("/colors/all", 'index')->name('all-colors');
+            Route::get("/colors/add", 'create')->name('add-color');
+            Route::post("/colors/add", 'store');
+            Route::get("/colors/edit/{id}", 'edit')->name('update-color');
+            Route::put("/colors/edit/{id}", 'update');
+            Route::delete("/colors/delete/{id}", 'destroy')->name('delete-color');
+        });
+
+
+
+    Route::controller(SizeController::class)->prefix('admin/dashboard')->name('dashboard.')
+        ->group(function () {
+            Route::get("/size/all", 'index')->name('all-sizes');
+            Route::get("/size/add", 'create')->name('add-size');
+            Route::post("/size/add", 'store');
+            Route::get("/size/edit/{id}", 'edit')->name('update-size');
+            Route::put("/size/edit/{id}", 'update');
+            Route::delete("/size/delete/{id}", 'destroy')->name('delete-size');
+        });
+});
+
+
 
 
 Route::get('admin/login', [AuthenticatedSessionController::class, 'create'])
-->name('admin.login');
+    ->name('admin.login');
 
 Route::post('admin/login', [AuthenticatedSessionController::class, 'store']);
 
 
 
-Route::get('/admin/register', [RegisteredUserController::class , 'create'])->name('admin.register');
-Route::post('/admin/register', [RegisteredUserController::class , 'store']);
-
-Route::post('/admin/logout', [AuthenticatedSessionController::class, 'destroy'])
-->name('admin.logout');
-
-
-// Products//
-
-Route::controller(ProductController::class)->prefix('admin/dashboard/')->name('dashboard.')
-->group(function() {
-    Route::get('/all-products', 'index')->name('all_products');
-    Route::get('/products/add', 'create')->name('create_product');
-    Route::post('/products/add', 'store');
-    Route::get("/produc/edit/{id}", 'edit')->name('update-product');
-    Route::put("/product/edit/{id}", 'update');
-    Route::delete("/product/delete/{id}", 'destroy')->name('delete-product');
-});
-
-
-//categories//
-
-Route::controller(CategoryController::class)->prefix('admin/dashboard')->name('admin.')
-->group(function() {
-    Route::get("/categories",'index')->name('categories');
-    Route::get("/categories/add", 'create')->name('add-category');
-    Route::post("/categories/add", 'store');
-    Route::get("/categories/edit/{id}", 'edit')->name('update-category');
-    Route::put("/categories/edit/{id}", 'update');
-    Route::delete("/categories/delete/{id}", 'destroy')->name('delete-category');
-});
-
-
-Route::controller(BrandController::class)->prefix('admin/dashboard')->name('dashboard.')
-->group(function() {
-    Route::get("/brands",'index')->name('all-brands');
-    Route::get("/brands/add", 'create')->name('add-brand');
-    Route::post("/brands/add", 'store');
-    Route::get("/brands/edit/{id}", 'edit')->name('update-brand');
-    Route::put("/brands/edit/{id}", 'update');
-    Route::delete("/brands/delete/{id}", 'destroy')->name('delete-brand');
-});
-
-
-Route::controller(ColorController::class)->prefix('admin/dashboard')->name('dashboard.')
-->group(function() {
-    Route::get("/colors/all",'index')->name('all-colors');
-    Route::get("/colors/add", 'create')->name('add-color');
-    Route::post("/colors/add", 'store');
-    Route::get("/colors/edit/{id}", 'edit')->name('update-color');
-    Route::put("/colors/edit/{id}", 'update');
-    Route::delete("/colors/delete/{id}", 'destroy')->name('delete-color');
-});
-
-
-
-Route::controller(SizeController::class)->prefix('admin/dashboard')->name('dashboard.')
-->group(function() {
-    Route::get("/size/all",'index')->name('all-sizes');
-    Route::get("/size/add", 'create')->name('add-size');
-    Route::post("/size/add", 'store');
-    Route::get("/size/edit/{id}", 'edit')->name('update-size');
-    Route::put("/size/edit/{id}", 'update');
-    Route::delete("/size/delete/{id}", 'destroy')->name('delete-size');
-});
-
-// Route::controller(UserController::class)->prefix('admin/dashboard')->name('dashboard.')
-// ->group(function() {
-
-//     Route::get('/all-users')->
-
-// });
-
-
-
-
-
+Route::get('/admin/register', [RegisteredUserController::class, 'create'])->name('admin.register');
+Route::post('/admin/register', [RegisteredUserController::class, 'store']);

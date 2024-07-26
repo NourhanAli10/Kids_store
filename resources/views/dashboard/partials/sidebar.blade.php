@@ -208,7 +208,7 @@
                     @csrf
                     {{-- <a href="" class="nav-link"><i class="mdi mdi-logout menu-icon"></i>
                         <span class="menu-title">Log Out</span></a> --}}
-                        <button type="submit">Logout</button>
+                        <button type="submit" class="logout-btn">Logout</button>
                 </form>
 
             </div>

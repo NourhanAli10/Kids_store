@@ -50,19 +50,6 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
 
-
-
-        if (Auth::user()->role === 'admin') {
-            Auth::logout();
-
-            $request->session()->invalidate();
-
-            $request->session()->regenerateToken();
-
-
-
-            return redirect()->route('admin.login');
-        } else {
             Auth::logout();
 
             $request->session()->invalidate();
@@ -70,6 +57,7 @@ class AuthenticatedSessionController extends Controller
             $request->session()->regenerateToken();
 
             return redirect()->route('login');
-        }
+
     }
+
 }

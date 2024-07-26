@@ -22671,3 +22671,10 @@ dl li {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.logout-btn {
+    background-color: #181824;
+    color: #8E94A9;
+    border: none;
+
+}
