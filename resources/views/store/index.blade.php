@@ -182,7 +182,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="new-products">
+                    {{-- <div class="tab-pane fade" id="new-products">
                         <div class="row justify-content-between mt-5">
                             {{--
                             <div class="col-3 new-arrival">
@@ -219,569 +219,569 @@
 
                             </div> --}}
 
+                {{-- </div> --}}
+
+                {{-- <div class="pt-5 d-block m-auto text-center">
+                    <button class="btn custom_btn">Show All</button>
+                </div> --}}
+
+            </div>
+
+            {{-- <div class="tab-pane fade" id="best-seller">
+                <div class="row justify-content-between mt-5">
+                    <div class="col-3 new-arrival">
+                        <div class="hover">
+                            <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
+                            <div class="product-icon">
+                                <a href="#" class="icon " data-product-id=>
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        shopping_bag
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </a>
+                            </div>
                         </div>
-
-                        <div class="pt-5 d-block m-auto text-center">
-                            <button class="btn custom_btn">Show All</button>
-                        </div>
-
-                    </div>
-
-                    <div class="tab-pane fade" id="best-seller">
-                        <div class="row justify-content-between mt-5">
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon " data-product-id=>
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">
+                                <p class="text-center text-dark fw-bold">Pack
+                                    Of Short Sleeve Bodysuit</p>
+                            </a>
+                            <div>
+                                <p>EGP 178.00</p>
                             </div>
 
-                        </div>
-                        <div class="row justify-content-between pt-5">
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="pt-5 d-block m-auto text-center">
-                            <button class="btn btn-primary btn-lg">Show All</button>
                         </div>
 
                     </div>
-
-                    {{-- <div class="tab-pane fade" id="offers">
-                        <div class="row justify-content-between mt-5">
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
+                    <div class="col-3 new-arrival">
+                        <div class="hover">
+                            <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
+                            <div class="product-icon">
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        shopping_bag
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </a>
                             </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">
+                                <p class="text-center text-dark fw-bold">Pack
+                                    Of Short Sleeve Bodysuit</p>
+                            </a>
+                            <div>
+                                <p>EGP 178.00</p>
                             </div>
 
                         </div>
-                        <div class="row justify-content-between pt-5">
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
 
-                                </div>
-
+                    </div>
+                    <div class="col-3 new-arrival">
+                        <div class="hover">
+                            <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
+                            <div class="product-icon">
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        shopping_bag
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </a>
                             </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-3 new-arrival">
-                                <div class="hover">
-                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
-                                    <div class="product-icon">
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                favorite
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                shopping_bag
-                                            </span>
-                                        </a>
-                                        <a href="#" class="icon">
-                                            <span class="material-symbols-outlined">
-                                                visibility
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <a href="#" class="text-decoration-none">
-                                        <p class="text-center text-dark fw-bold">Pack
-                                            Of Short Sleeve Bodysuit</p>
-                                    </a>
-                                    <div>
-                                        <p>EGP 178.00</p>
-                                    </div>
-
-                                </div>
-
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">
+                                <p class="text-center text-dark fw-bold">Pack
+                                    Of Short Sleeve Bodysuit</p>
+                            </a>
+                            <div>
+                                <p>EGP 178.00</p>
                             </div>
 
                         </div>
-                        <div class="pt-5 d-block m-auto text-center">
-                            <button class="btn btn-primary btn-lg">Show All</button>
+
+                    </div>
+                    <div class="col-3 new-arrival">
+                        <div class="hover">
+                            <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
+                            <div class="product-icon">
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        shopping_bag
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">
+                                <p class="text-center text-dark fw-bold">Pack
+                                    Of Short Sleeve Bodysuit</p>
+                            </a>
+                            <div>
+                                <p>EGP 178.00</p>
+                            </div>
+
                         </div>
 
-                    </div> --}}
+                    </div>
 
                 </div>
+                <div class="row justify-content-between pt-5">
+                    <div class="col-3 new-arrival">
+                        <div class="hover">
+                            <a href="#"><img src="{{ asset('front_assets/Images/Capture.jpg') }}"></a>
+                            <div class="product-icon">
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        shopping_bag
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">
+                                <p class="text-center text-dark fw-bold">Pack
+                                    Of Short Sleeve Bodysuit</p>
+                            </a>
+                            <div>
+                                <p>EGP 178.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-3 new-arrival">
+                        <div class="hover">
+                            <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                            <div class="product-icon">
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        shopping_bag
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">
+                                <p class="text-center text-dark fw-bold">Pack
+                                    Of Short Sleeve Bodysuit</p>
+                            </a>
+                            <div>
+                                <p>EGP 178.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-3 new-arrival">
+                        <div class="hover">
+                            <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                            <div class="product-icon">
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        shopping_bag
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">
+                                <p class="text-center text-dark fw-bold">Pack
+                                    Of Short Sleeve Bodysuit</p>
+                            </a>
+                            <div>
+                                <p>EGP 178.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="col-3 new-arrival">
+                        <div class="hover">
+                            <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                            <div class="product-icon">
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        favorite
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        shopping_bag
+                                    </span>
+                                </a>
+                                <a href="#" class="icon">
+                                    <span class="material-symbols-outlined">
+                                        visibility
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <a href="#" class="text-decoration-none">
+                                <p class="text-center text-dark fw-bold">Pack
+                                    Of Short Sleeve Bodysuit</p>
+                            </a>
+                            <div>
+                                <p>EGP 178.00</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="pt-5 d-block m-auto text-center">
+                    <button class="btn btn-primary btn-lg">Show All</button>
+                </div>
+
+            </div>
+
+           <div class="tab-pane fade" id="offers">
+                        <div class="row justify-content-between mt-5">
+                            <div class="col-3 new-arrival">
+                                <div class="hover">
+                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                                    <div class="product-icon">
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                favorite
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                shopping_bag
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                visibility
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="text-decoration-none">
+                                        <p class="text-center text-dark fw-bold">Pack
+                                            Of Short Sleeve Bodysuit</p>
+                                    </a>
+                                    <div>
+                                        <p>EGP 178.00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-3 new-arrival">
+                                <div class="hover">
+                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                                    <div class="product-icon">
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                favorite
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                shopping_bag
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                visibility
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="text-decoration-none">
+                                        <p class="text-center text-dark fw-bold">Pack
+                                            Of Short Sleeve Bodysuit</p>
+                                    </a>
+                                    <div>
+                                        <p>EGP 178.00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-3 new-arrival">
+                                <div class="hover">
+                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                                    <div class="product-icon">
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                favorite
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                shopping_bag
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                visibility
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="text-decoration-none">
+                                        <p class="text-center text-dark fw-bold">Pack
+                                            Of Short Sleeve Bodysuit</p>
+                                    </a>
+                                    <div>
+                                        <p>EGP 178.00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-3 new-arrival">
+                                <div class="hover">
+                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                                    <div class="product-icon">
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                favorite
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                shopping_bag
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                visibility
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="text-decoration-none">
+                                        <p class="text-center text-dark fw-bold">Pack
+                                            Of Short Sleeve Bodysuit</p>
+                                    </a>
+                                    <div>
+                                        <p>EGP 178.00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row justify-content-between pt-5">
+                            <div class="col-3 new-arrival">
+                                <div class="hover">
+                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                                    <div class="product-icon">
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                favorite
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                shopping_bag
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                visibility
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="text-decoration-none">
+                                        <p class="text-center text-dark fw-bold">Pack
+                                            Of Short Sleeve Bodysuit</p>
+                                    </a>
+                                    <div>
+                                        <p>EGP 178.00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-3 new-arrival">
+                                <div class="hover">
+                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                                    <div class="product-icon">
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                favorite
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                shopping_bag
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                visibility
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="text-decoration-none">
+                                        <p class="text-center text-dark fw-bold">Pack
+                                            Of Short Sleeve Bodysuit</p>
+                                    </a>
+                                    <div>
+                                        <p>EGP 178.00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-3 new-arrival">
+                                <div class="hover">
+                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                                    <div class="product-icon">
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                favorite
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                shopping_bag
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                visibility
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="text-decoration-none">
+                                        <p class="text-center text-dark fw-bold">Pack
+                                            Of Short Sleeve Bodysuit</p>
+                                    </a>
+                                    <div>
+                                        <p>EGP 178.00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-3 new-arrival">
+                                <div class="hover">
+                                    <a href="#"><img src="{{ asset('front_assets/Images/Capture1.jpg') }}"></a>
+                                    <div class="product-icon">
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                favorite
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                shopping_bag
+                                            </span>
+                                        </a>
+                                        <a href="#" class="icon">
+                                            <span class="material-symbols-outlined">
+                                                visibility
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="#" class="text-decoration-none">
+                                        <p class="text-center text-dark fw-bold">Pack
+                                            Of Short Sleeve Bodysuit</p>
+                                    </a>
+                                    <div>
+                                        <p>EGP 178.00</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="pt-5 d-block m-auto text-center">
+                            <button class="btn btn-primary btn-lg">Show All</button>
+                        </div>
+
+            </div> --}}
+
+            </div>
 
 
 
@@ -861,8 +861,6 @@
 @push('js')
     <script>
         $(document).ready(function() {
-
-
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -872,7 +870,6 @@
 
                     $('.addToWishlist').on('click', function(e) {
                         e.preventDefault();
-
                         $.ajax({
                             type: 'post',
                             url: "{{ route('wishlist-store') }}",
@@ -885,35 +882,11 @@
                                 var toast = new bootstrap.Toast(toastEl);
                                 toast.show();
 
-
-
                             },
                         });
 
                     });
+                });
 
-
-
-
-                    $('#new_products_tab').on('click', function(e) {
-                        e.preventDefault();
-
-                        $.ajax({
-                            type: 'get',
-                            url: "{{ route('new_products') }}",
-                            success: function(data) {
-                                let productHtml = '';
-                                data.forEach(function(product) {
-                                    productHtml += `<div class="product">
-                                    <h3>${product.name}</h3>
-                                    <p>${product.description}</p>
-                                    <p>${product.price}</p>
-                                 </div>`;
-                                });
-                                $('#new-products').html(productHtml);
-                            },
-
-                        });
-                    });
     </script>
 @endpush

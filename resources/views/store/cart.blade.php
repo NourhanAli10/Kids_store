@@ -119,7 +119,7 @@
                     <div class="card-body">
                         <dl class="dlist-align">
                             <dt>Total price:</dt>
-                            <dd class="text-right ml-3">{{ Cart::getSubTotal() }}</dd>
+                            <dd class="text-right ml-3">{{ number_format(Cart::getSubTotal(), 2) }}</dd>
                         </dl>
                         <dl class="dlist-align">
                             <dt>Discount:</dt>
@@ -129,9 +129,10 @@
                             <dt>Total:</dt>
                             <dd class="text-right text-dark b ml-3"><strong></strong></dd>
                         </dl>
-                        <hr> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make
-                            Purchase </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2"
-                            data-abc="true">Continue Shopping</a>
+                        <hr>
+                        <a href="#" class="btn btn-out custom_btn btn-square btn-main" data-abc="true"> Make
+                            Purchase </a>
+                        <a href="#" class="btn custom_btn btn-main mt-2" data-abc="true">Continue Shopping</a>
                     </div>
                 </div>
             </aside>
