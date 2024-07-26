@@ -132,6 +132,9 @@ Route::controller(ProductController::class)->prefix('admin/dashboard/')->name('d
     Route::get('/all-products', 'index')->name('all_products');
     Route::get('/products/add', 'create')->name('create_product');
     Route::post('/products/add', 'store');
+    Route::get("/produc/edit/{id}", 'edit')->name('update-product');
+    Route::put("/product/edit/{id}", 'update');
+    Route::delete("/product/delete/{id}", 'destroy')->name('delete-product');
 });
 
 

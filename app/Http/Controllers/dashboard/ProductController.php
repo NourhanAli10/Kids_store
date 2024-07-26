@@ -119,7 +119,21 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+
+        $data = $request->except('image', '_token', '_method');
+
+        if ($request->file('image'))
+        {
+            $media = new Media;
+            $NewImageName = $media->UploadMedia($request->file('image'), 'products');
+            $data['image'] = $NewImageName;
+            $media->deleteMedia($product->image, 'products');
+        };
+        $product->update($data);
+        return redirect()->route('dashboard.all-products')->with('success', 'product has been updated successfully');
+
     }
 
     /**
@@ -127,6 +141,11 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $product = Product::findorFail($id);
+        $media = new Media;
+        $media->deleteMedia($product->image, 'products');
+        $product->delete();
+        return redirect()->back()->with('success', 'product has been deleted successfully');
+
     }
 }

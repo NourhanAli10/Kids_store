@@ -218,7 +218,8 @@
                                                 @endphp
 
                                             </span></td>
-                                        <td width="15%"><button class="round-black-btn small-btn">Add to Cart</button>
+                                        <td width="15%">
+                                            <button class="round-black-btn small-btn">Add to Cart</button>
                                         </td>
                                         <td width="10%" class="text-center"><a href="#"
                                                 class="trash-icon removeFromWishlist"

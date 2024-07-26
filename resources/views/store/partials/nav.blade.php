@@ -68,7 +68,6 @@
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                                 <li><a class="dropdown-item" href="{{ route('user-profile') }}">My profile</a></li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="">Logout</a></li>
                             </ul>
                         </li>
                     @endif

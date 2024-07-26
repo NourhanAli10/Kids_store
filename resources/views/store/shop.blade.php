@@ -6,7 +6,7 @@
 @push('css')
     <style>
         .breadcrumb-nav {
-            background-image: url(front_assets/Images/cart.jpg);
+            background-image: url('../front_assets/Images/cart.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             height: 350px;
@@ -190,92 +190,92 @@
 @endpush
 @section('content')
 
-    <div class=" bg-dark breadcrumb-nav">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Shop</h1>
-                <div class="w-75 m-auto breadcrumb-custom"
-                    style="--bs-breadcrumb-divider: '>'; --bs-breadcrumb-item-color: white; --bs-breadcrumb-active-color: white;"
-                    aria-label="breadcrumb">
-                    <ol class="breadcrumb brdcrumb">
-                        <li class="breadcrumb-item "><a href="{{ route('home') }}"
-                                class="text-decoration-none text-white">Home</a></li>
-                        <li class="breadcrumb-item " aria-current="page">Shop</li>
-                    </ol>
+<div class=" bg-dark breadcrumb-nav">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shop</h1>
+            <div class="w-75 m-auto breadcrumb-custom"
+                style="--bs-breadcrumb-divider: '>'; --bs-breadcrumb-item-color: white; --bs-breadcrumb-active-color: white;"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb brdcrumb">
+                    <li class="breadcrumb-item "><a href="{{ route('home') }}"
+                            class="text-decoration-none text-white">Home</a></li>
+                    <li class="breadcrumb-item " aria-current="page">Shop</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Product Section - Start -->
+    <section class="container">
+
+
+
+        <div class="row justify-content-between mt-5" id="products-container">
+            @foreach ($products as $product)
+                <div class="col-3 new-arrival">
+                    <div class="hover">
+                        @php
+                            $firstImage = $product->images->first();
+                        @endphp
+                        <a href="{{ route('product-details', $product->slug) }}">
+                            <img src="{{ asset('Images/products/' . $firstImage->image_url) }}"
+                                alt="{{ $product->name }}"></a>
+                        <div class="product-icon">
+
+                            <a href="#" class="icon addToWishlist"
+                                data-product-id="{{ $product->id }}">
+                                <span class="material-symbols-outlined">
+                                    favorite
+                                </span>
+                            </a>
+
+
+
+                            <a href="#" class="icon">
+                                <span class="material-symbols-outlined">
+                                    shopping_bag
+                                </span>
+                            </a>
+                            <a href="#" class="icon">
+                                <span class="material-symbols-outlined">
+                                    visibility
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <a href="{{ route('product-details', $product->slug) }}"
+                            class="text-decoration-none">
+                            <p class="text-center text-dark fw-bold product-name">{{ $product->name }}</p>
+                        </a>
+                        <div>
+                            <p class="product-price">EGP {{ $product->price }}</p>
+                        </div>
+
+                    </div>
+
                 </div>
+            @endforeach
+        </div>
+
+    </section>
+
+    <div class="toast-container  p-3">
+        <div id="toast" class="toast align-items-center text-dark bg-secondary border-1 w-100 fade" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="toast-body">
+                    <!-- Message will be inserted here -->
+                </div>
+                <button type="button" class="btn-close " data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
     </div>
 
-    <!-- Product Section - Start -->
-    <section>
-        <div class="container">
-            <div class="row g-4 py-5">
-                <h3 class="mb-5 text-center fs-2">Products</h3>
-                @foreach ($products as $product)
-                    <div class="col-md-3">
-                        <div class="product-single-card">
-                            <div class="product-top-area">
-                                {{-- <div class="product-discount">
-                                    $55.00
-                                </div> --}}
 
-                                <div class="product-img">
-                                    <div class="first-view">
-                                        <img src="{{ asset('/Images/products/' . $product->images->first()->image_url) }}"
-                                            alt="logo" class="img-fluid" width="300px" height="300px">
-                                    </div>
-
-                                </div>
-                                <div class="sideicons">
-                                    <button class="sideicons-btn">
-                                        <i class="fa-solid fa-cart-plus"></i>
-                                    </button>
-                                    <button class="sideicons-btn">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </button>
-                                    <a href="#" class="icon addToWishlist"
-                                    data-product-id="{{ $product->id }}">
-                                    <span class="material-symbols-outlined">
-                                        favorite
-                                    </span>
-                                </a>
-                                    <button class="sideicons-btn">
-                                        <i class="fa-solid fa-shuffle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h6 class="product-category"><a href="#"> <span class="text-primary">Category :
-                                        </span>{{ $product->category->name }}</a></h6>
-                                <h6 class="product-title text-truncate"><a href="#">{{ $product->name }}</a></h6>
-                                <div class="d-flex align-items-center">
-                                    <div class="review-star me-1">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-regular fa-star-half-stroke"></i>
-                                        <i class="fa-regular fa-star"></i>
-                                    </div>
-
-                                    <span class="review-count">(13)</span>
-                                </div>
-                                <div class="d-flex flex-wrap align-items-center py-2">
-                                    {{-- <div class="old-price">
-                    {{ $product->price }}
-                </div> --}}
-                                    <div class="new-price">
-                                        {{ $product->price }} EGP
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
     <!-- Product Section - End -->
 
 @endsection
@@ -284,6 +284,35 @@
 @push('js')
 
 
+<script>
+    $(document).ready(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
 
+
+                $('.addToWishlist').on('click', function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        type: 'post',
+                        url: "{{ route('wishlist-store') }}",
+                        data: {
+                            'productId': $(this).attr('data-product-id'),
+                        },
+                        success: function(data) {
+                            $('#toast .toast-body').text(data.msg);
+                            var toastEl = document.getElementById('toast');
+                            var toast = new bootstrap.Toast(toastEl);
+                            toast.show();
+
+                        },
+                    });
+
+                });
+            });
+
+</script>
 
 @endpush

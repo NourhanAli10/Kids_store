@@ -19,7 +19,7 @@
                         <tr class="text-center">
 
                             <th> Product Name </th>
-                            <th> Code </th>
+                            {{-- <th> Code </th> --}}
                             <th> Brand </th>
                             <th> Category </th>
                             <th> Quantity </th>
@@ -27,7 +27,7 @@
                             <th> Sizes </th>
                             <th> Price </th>
                             <th> Status </th>
-                            <th> Created by</th>
+                            {{-- <th> Created by</th> --}}
                             <th> Action </th>
                         </tr>
                     </thead>
@@ -36,9 +36,9 @@
                             @foreach ($products as $product)
                                 <tr>
                                     <td>{{ $product->name }}</td>
-                                    <td>{{ $product->code }}</td>
+                                    {{-- <td>{{ $product->code }}</td> --}}
                                     <td>{{ $product->brand_id }}</td>
-                                    <td>{{ $product->category_id }}</td>
+                                    <td>{{ $product->category->name }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td>
                                         @foreach ($product->colors as $color)
@@ -58,12 +58,14 @@
                                             <span class="badge bg-danger">Not Available</span>
                                         @endif
                                     </td>
-                                    <td>{{ $product->created_by }}</td>
+                                    {{-- <td>{{ $product->created_by }}</td> --}}
                                     <td>
-                                        <a href="" class="me-3 text-primary"><i
-                                                class="mdi mdi-pencil font-size-18"></i></a>
-                                        <button type="submit" class="text-danger"><i
-                                                class="mdi mdi-close font-size-18"></i></button>
+                                        <a href="{{ route('dashboard.update-product', $product->id) }}" class="btn btn-md px-5 fs-6 py-3 btn-rounded">Edit</a>
+                                        <form method="POST" action="{{ route('dashboard.delete-product', $product->id) }}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-md mt-2 px-5 py-3 fs-6 btn-rounded delete-btn">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

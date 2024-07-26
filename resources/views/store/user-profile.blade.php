@@ -87,6 +87,13 @@
         background-color: #dff0d8;
         border-color: #d6e9c6;
     }
+
+    .logout-btn {
+        background-color: transparent !important;
+        border: none !important;
+        text-align: start !important;
+
+    }
 </style>
 
 
@@ -122,10 +129,10 @@
         <a href="#profile-info" class="active">Account details</a>
         <a href="#orders">Orders</a>
         <a href="#reset-password">Reset your password</a>
-            <form action="{{route('logout')}}" method="post">
+        <form action="{{route('logout')}}" method="post">
                 @csrf
-                <button type="submit">Logout</button>
-            </form>
+                <button type="submit" class="logout-btn">Logout</button>
+        </form>
     </div>
 
     <div class="tab-content col-8">
@@ -172,6 +179,11 @@
             </form>
         </div>
 
+        <div class="tab-pane fade" id="orders">
+            <p>No orders till now</p>
+
+        </div>
+
 
         <div class="tab-pane fade" id="reset-password">
             <h1>Reset your password</h1>
@@ -196,7 +208,7 @@
                     <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" value="" required>
                 </div>
 
-                
+
                 <button type="submit" class="btn btn-primary">Save changes</button>
             </form>
         </div>
