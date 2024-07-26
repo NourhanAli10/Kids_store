@@ -27,6 +27,11 @@ class CartController extends Controller
         $data['price'] = $product->price;
         $data['size_id'] = $request->size_id;
         $data['color_id'] = $request->color_id;
+        $data['attributes'] = [
+            'size' => $product->sizes->find($request->size_id)->name,
+            'color' => $product->colors->find($request->color_id)->name,
+            'image' => $product->images[0],
+        ];
         if (Auth::check()) {
             $data['user_id'] = Auth::id();
             CartModel::create($data);
@@ -39,6 +44,7 @@ class CartController extends Controller
 
     public function cart()
     {
-        dd(Cart::getContent());
+        $cart = Cart::getContent();
+        return view('store.cart', compact('cart'));
     }
 }

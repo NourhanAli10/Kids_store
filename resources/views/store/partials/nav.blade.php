@@ -84,19 +84,20 @@
                             <ul class="shopping-cart-items">
                                 @foreach (Cart::getContent() as $item)
                                     <li class="clearfix">
-                                        <div>
-                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg"
+
+                                        <div class="d-flex justify_content_between">
+                                            <span class="">{{ $item->name }}</span>
+                                            <img src="{{ asset('Images/Products/'. $item->attributes->image->image_url )}}"
                                                 alt="item1" />
-                                            <span class="item-name">{{ $item->name }}</span>
                                         </div>
 
-                                        <p class="item-price">$849.99</p>
-                                        <p class="item-quantity">Quantity: 01</p>
+                                        <p class="item-price">{{ $item->quantity  }} X EGP{{ $item->price }}</p>
+
                                     </li>
                                 @endforeach
 
                             </ul>
-                            <a href="#" class="button">Checkout</a>
+                            <a href="{{ route('cart') }}" class="button">Checkout</a>
                         </div> <!-- end shopping-cart -->
                     </li>
                 </ul>

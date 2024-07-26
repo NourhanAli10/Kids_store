@@ -90,8 +90,22 @@ Table OF Contents
 
   }
 
-  .container {
-    
+  .custom_btn {
+    background-color: #ee6394 !important;
+    border: 1px solid #ee6394 !important;
+    width: 200px !important;
+    border-radius: 50px !important;
+    letter-spacing: 1px !important;
+    color: #f5f3f4 !important;
+    padding:20px !important;
+  }
+
+  .custom_btn:hover {
+    box-shadow: inset 400px 0 0 0 #e8eaee3d;
+    border: 1px solid #e8eaee3d;
+    transition: ease-out 1s;
+    transition-duration: 1s;
+    color: var(--font-color)
   }
 
 

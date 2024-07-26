@@ -40,7 +40,7 @@
                             one place</p>
                         <h1 class="display-1 fw-bolder text-capitalize">Reino
                             Kids</h1>
-                        <a href="{{ route('show-all-products') }}" class="btn btn-primary p-3 fs-5 mt-5"> Shop
+                        <a href="{{ route('show-all-products') }}" class="btn custom_btn p-3 fs-5 mt-5"> Shop
                             now</a>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                             one place</p>
                         <h1 class="display-1 fw-bolder text-capitalize">Reino
                             Kids</h1>
-                        <a href="{{ route('show-all-products') }}" class="btn btn-primary p-3 fs-5 mt-5"> Shop
+                        <a href="{{ route('show-all-products') }}" class="btn custom_btn p-3 fs-5 mt-5"> Shop
                             now</a>
                     </div>
 
@@ -63,7 +63,7 @@
                             one place</p>
                         <h1 class="display-1 fw-bolder text-capitalize">Reino
                             Kids</h1>
-                        <a href="{{ route('show-all-products') }}" class="btn btn-primary p-3 fs-5 mt-5"> Shop
+                        <a href="{{ route('show-all-products') }}" class="btn custom_btn p-3 fs-5 mt-5"> Shop
                             now</a>
                     </div>
                 </div>
@@ -98,7 +98,7 @@
         <section>
             <div class="container mt-5 pt-3">
                 <h3 class="text-center m-5">Products</h3>
-                <div class="product-list text-center">
+                {{-- <div class="product-list text-center">
                     <ul class="nav text-center" id="nav-tab" role="tablist">
                         <li class="nav-item">
                             <button class="nav-link nav-tab" id="all-products-tab" data-toggle="tab"
@@ -121,7 +121,7 @@
                         </li>
                     </ul>
 
-                </div>
+                </div> --}}
 
                 <div class="tab-content">
 
@@ -178,7 +178,7 @@
 
 
                         <div class="pt-5 d-block m-auto text-center">
-                            <a href="{{ route('show-all-products') }}" class="btn btn-primary btn-lg">Show All</a>
+                            <a href="{{ route('show-all-products') }}" class="btn custom_btn  btn-lg">Show All</a>
                         </div>
                     </div>
 
@@ -222,7 +222,7 @@
                         </div>
 
                         <div class="pt-5 d-block m-auto text-center">
-                            <button class="btn btn-primary btn-lg">Show All</button>
+                            <button class="btn custom_btn">Show All</button>
                         </div>
 
                     </div>
@@ -830,7 +830,7 @@
                         <p class="text-white fs-4">Subscribe news latter</p>
                         <form>
                             <input type="email" placeholder="Enter your email">
-                            <button>Subscribe Now</button>
+                            <button class="btn custom_btn">Subscribe Now</button>
                         </form>
                     </div>
                     <div>
