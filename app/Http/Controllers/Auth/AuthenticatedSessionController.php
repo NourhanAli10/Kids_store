@@ -38,7 +38,9 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if (Auth::user()->role === 'admin') {
+        $user = Auth::user();
+
+        if ($user->role === 'admin') {
             return redirect()->route('dashboard');
         }
         return redirect()->route('home');
@@ -50,14 +52,12 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
 
-            Auth::logout();
+        Auth::logout();
 
-            $request->session()->invalidate();
+        $request->session()->invalidate();
 
-            $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
-            return redirect()->route('login');
-
+        return redirect()->route('login');
     }
-
 }

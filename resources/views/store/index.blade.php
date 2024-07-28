@@ -147,11 +147,7 @@
 
 
 
-                                            <a href="#" class="icon">
-                                                <span class="material-symbols-outlined">
-                                                    shopping_bag
-                                                </span>
-                                            </a>
+                                           
                                             <a href="#" class="icon">
                                                 <span class="material-symbols-outlined">
                                                     visibility

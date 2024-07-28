@@ -43,7 +43,7 @@ class CategoryController extends Controller
         ];
 
         $request->validate([
-            'name' => 'required|unique:categories|min:4|max:255',
+            'name' => 'required|unique:categories|min:2|max:255',
             'status' => 'required',
             'image' => 'required',
         ], $messages);
@@ -92,13 +92,20 @@ class CategoryController extends Controller
         ];
 
         $request->validate([
-            'name' => 'required|unique:categories|min:4|max:255',
+            'name' => 'required|min:2|max:255',
             'status' => 'required',
         ], $messages);
 
         $data = $request->except('_token', '_method');
         $data['slug'] = Str::slug($request->input('name'), '-');
         $data['created_by'] = Auth::user()->name;
+        if ($request->file('image'))
+        {
+            $media = new Media;
+            $NewImageName = $media->UploadMedia($request->file('image'), 'categories');
+            $data['image'] = $NewImageName;
+            $media->deleteMedia($category->image, 'categories');
+        };
         $category->update($data);
         return redirect()->route('admin.categories')->with('success', 'Category Updated successfully!');
     }

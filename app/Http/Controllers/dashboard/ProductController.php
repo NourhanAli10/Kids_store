@@ -47,7 +47,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProduct $request)
     {
 
 
@@ -81,18 +81,19 @@ class ProductController extends Controller
                 ]);
             }
         }
+        return redirect()->back()->with('success', 'Product added successfully!');
 
-        if ($product) {
-            return response()->json([
-                'status' => true,
-                'message' => 'Product has been added successfully',
-            ]);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Product has not been added successfully',
-            ]);
-        }
+        // if ($product) {
+        //     return response()->json([
+        //         'status' => true,
+        //         'message' => 'Product has been added successfully',
+        //     ]);
+        // } else {
+        //     return response()->json([
+        //         'success' => false,
+        //         'message' => 'Product has not been added successfully',
+        //     ]);
+        // }
     }
 
     /**

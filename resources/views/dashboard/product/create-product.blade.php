@@ -55,7 +55,7 @@
                 </div>
 
 
-                <form class="forms-sample" id="add-product">
+                <form class="forms-sample" id="add-product" method="post" action="{{ route('dashboard.create_product') }}">
                     @csrf
                     <div class="row">
                         <div class="col-sm-6">
@@ -115,7 +115,7 @@
                             <select class="form-control" id="ProductBrand" name="brand_id">
                                 <option disabled selected>select</option>
                                 @foreach ($brands as $brand)
-                                    <option @selected(old('brand_id') == $brand->id) value="{{ $brand->id }}">{{ $brand->name }}
+                                    <option @selected(old('brand_id') == $brand->id) value="{{ $brand->id }}" required>{{ $brand->name }}
                                     </option>
                                 @endforeach
                             </select>
@@ -192,37 +192,34 @@
     <script>
         $(document).ready(function() {
             $('.colors').select2({
-                // placeholder: "Select colors"
-                // allowClear: true
-                tags: true
+
+                tags: true,
             });
 
             $('.sizes').select2({
-                // placeholder: "Select colors"
-                // allowClear: true
-                tags: true
+            tags: true,
             });
         });
 
-            $('#add-product').on('submit', function(event) {
-                event.preventDefault();
-                var formData = new FormData($('#add-product')[0]);
-                $.ajax({
-                    type: 'post',
-                    enctype: 'multipart/form-data',
-                    url: "{{ route('dashboard.create_product') }}",
-                    data: formData,
-                    processData: false,
-                    contentType: false,
-                    cache: false,
-                    success: function(data) {
-                        if (data.status == true) {
-                            var successElement = $('#success');
-                            successElement.text(data.message).show();
-                        }
-                },
-            });
-        });
+            // $('#add-product').on('submit', function(event) {
+            //     event.preventDefault();
+            //     var formData = new FormData($('#add-product')[0]);
+            //     $.ajax({
+            //         type: 'post',
+            //         enctype: 'multipart/form-data',
+            //         url: "{{ route('dashboard.create_product') }}",
+            //         data: formData,
+            //         processData: false,
+            //         contentType: false,
+            //         cache: false,
+            //         success: function(data) {
+            //             if (data.status == true) {
+            //                 var successElement = $('#success');
+            //                 successElement.text(data.message).show();
+            //             }
+            //     },
+            // });
+
 
 
         $(document).ready(function() {

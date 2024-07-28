@@ -8,7 +8,9 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Edit Category</h4>
-                <form class="forms-sample" method="POST" action="{{ route('admin.update-category', $category->id  ) }}">
+                <form class="forms-sample" method="POST"
+                action="{{ route('admin.update-category', $category->id  ) }}"
+                enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -19,6 +21,19 @@
                             <div class="text-danger font-weight-bold my-2">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="form-group position-relative">
+
+                        <label for="image">Image</label>
+                        <div class="input-group col-12">
+                            <input type="file" name="image" id="image" class="form-control file-upload-info" placeholder="Upload Image">
+                        </div>
+                        <img id ="imgPreview" src="{{asset('Images/categories/'.$category->image)}}" alt="" width="300px" height="200px">
+
+                        @error('image')
+                            <div class="text-danger font-weight-bold my-2">{{ $message }}</div>
+                        @enderror
+                    </div>
+
                     <div class="form-group">
                         <label for="exampleSelectStatus">Status</label>
                         <select class="form-control p-3" name="status"id="exampleSelectStatus">
