@@ -7,10 +7,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\store\CartController;
 use App\Http\Controllers\store\CategoryController;
 use App\Http\Controllers\store\HomeController;
+use App\Http\Controllers\store\OrderController;
 use App\Http\Controllers\store\ProductDetailsController;
 use App\Http\Controllers\store\UserController;
 use App\Http\Controllers\store\WishlistController;
 use Illuminate\Support\Facades\Route;
+
 
 
 /*
@@ -34,7 +36,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/my-account', [UserController::class, 'profilePage'])->name('user-profile');
     Route::post('/change-password', [UserController::class, 'updatePassword'])->name('update-password');
-    Route::post('/wishlist', [WishlistController::class, 'store'])->name('wishlist-store');
     Route::get('/wishlist/products', [WishlistController::class, 'index'])->name('wishlist-page');
     Route::delete('/wishlist', [WishlistController::class, 'destroy'])->name('wishlist-delete');
 });
@@ -69,6 +70,12 @@ Route::controller(ProductController::class)->group(function () {
 
 
 
+
+Route::post('/wishlist', [WishlistController::class, 'store'])->name('wishlist-store');
+Route::get('/orders', [OrderController::class, 'index'])->name('checkout');
+Route::post('/orders', [OrderController::class, 'placeOrder'])->name('checkout.place-order');
+Route::post('/my-account/update-user/{id}', [UserController::class, 'UpdateProfile'])->name('update-user');
+Route::post('/my-account/store-address', [UserController::class, 'StoreAddress'])->name('store-address');
 
 
 

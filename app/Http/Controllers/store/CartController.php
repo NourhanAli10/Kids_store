@@ -47,4 +47,5 @@ class CartController extends Controller
         $cart = Cart::getContent();
         return view('store.cart', compact('cart'));
     }
+
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\store\auth;
+namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -23,8 +23,7 @@ class RegisterRequest extends FormRequest
     {
         return [
 
-            'first-name' => 'required|alpha|min:2|max:150',
-            'last-name' => 'required|alpha|min:2|max:150',
+            'name' => 'required|alpha|min:2|max:150',
             'email' => 'required|regex:/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/|unique:users,email|max:190',
             'phone' => 'required|digits:11|regex:/^01[0125][0-9]{8}$/|unique:users,phone',
             'password' => 'required|confirmed|regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/',
@@ -40,15 +39,10 @@ class RegisterRequest extends FormRequest
     {
         return [
             //name
-            'first-name.required' => "First name is required",
-            'first-name.alpha' => "First name should be letters only",
-            'first-name.max' => "First name should be less than 150 characters",
-            'first-name.min' => "First name must be at least 2 characters",
-            'last-name.required' => "Last name is required",
-            'last-name.alpha' => "Last name should be letters only",
-            'last-name.max' => "Last name should be less than 150 characters",
-            'last-name.min' => "Last name must be at least 2 characters",
-
+            'name.required' => "First name is required",
+            'name.alpha' => "First name should be letters only",
+            'name.max' => "First name should be less than 150 characters",
+            'name.min' => "First name must be at least 2 characters",
             //email
             'email.required' => "Email is required",
             'email.regex' => "Invalid email",

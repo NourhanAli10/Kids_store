@@ -80,7 +80,7 @@
                             <div>
                                 <select class="form-control" name="color_id">
                                     <option> Select Color</option>
-                                    @foreach ($product->colors as $color)
+                                    @foreach ($product->colors->unique('id') as $color)
                                         <option value="{{ $color->id }}">{{ $color->name }}</option>
                                     @endforeach
                                 </select>
@@ -94,7 +94,7 @@
                             <div class="">
                                 <select class="form-control" name="size_id">
                                     <option> Select size</option>
-                                    @foreach ($product->sizes as $size)
+                                    @foreach ($product->sizes->unique('id') as $size)
                                         <option value="{{ $size->id }}">{{ $size->name }}</option>
                                     @endforeach
                                 </select>
@@ -233,7 +233,7 @@
             }
         });
 
-        
+
     </script>
 @endpush
 

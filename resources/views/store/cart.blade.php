@@ -3,139 +3,144 @@
 
 @push('css')
     <style>
-        .cart-div {
-            margin: 50px;
+        .section-cart {
+            margin-top: 150px;
+            margin-bottom: 150px;
         }
 
-
-        .breadcrumb-nav {
-            background-image: url('front_assets/Images/cart.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 350px;
-            margin-top: 0px;
-            margin-bottom: 40px;
+        .icon-hover-primary:hover {
+            border-color: #3b71ca !important;
+            background-color: white !important;
         }
 
-        .brdcrumb {
-
-            padding-left: 319px !important;
+        .icon-hover-primary:hover i {
+            color: #3b71ca !important;
         }
 
+        .icon-hover-danger:hover {
+            border-color: #dc4c64 !important;
+            background-color: white !important;
+        }
 
-        .breadcrumb-custom {
-            --bs-breadcrumb-divider: '>';
-            --bs-breadcrumb-item-color: white;
-            --bs-breadcrumb-active-color: white;
-            color: white;
-            /* Fallback for browsers that don't support CSS variables */
+        .icon-hover-danger:hover i {
+            color: #dc4c64 !important;
         }
     </style>
 @endpush
 
 @section('content')
-    <div class="bg-dark breadcrumb-nav">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Cart</h1>
-                <div class="w-75 m-auto breadcrumb-custom"
-                    style="--bs-breadcrumb-divider: '>'; --bs-breadcrumb-item-color: white; --bs-breadcrumb-active-color: white;"
-                    aria-label="breadcrumb">
-                    <ol class="breadcrumb brdcrumb">
-                        <li class="breadcrumb-item "><a href="{{ route('home') }}"
-                                class="text-decoration-none text-white">Home</a></li>
-                        <li class="breadcrumb-item " aria-current="page">Cart</li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="cart-div">
-        <div class="row">
-            <aside class="col-lg-9">
-                <div class="card">
-                    <div class="table-responsive">
-                        <table class="table table-borderless table-shopping-cart">
-                            <thead class="text-muted">
-                                <tr class="small text-uppercase">
-                                    <th scope="col">Product</th>
-                                    <th scope="col" width="120">Quantity</th>
-                                    <th scope="col" width="120">Price</th>
-                                    <th scope="col" class="text-right d-none d-md-block" width="200"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($cart as $item)
-                                    <tr>
-                                        <td>
-                                            <figure class="itemside align-items-center">
-                                                <div class="aside">
-                                                    <img src="{{ asset('Images/Products/' . $item->attributes->image->image_url) }}"
-                                                        class="img-sm" width="100px" height="100px">
-                                                </div>
-                                                <figcaption class="info"> <a href="#"
-                                                        class="title text-dark text-decoration-none"
-                                                        data-abc="true">{{ $item->name }}</a>
-                                                    <p class="text-muted small">SIZE:{{ $item->attributes->size }} <br>
+    <section class="section-cart">
+        <div class="container">
+            <div class="row">
+                <!-- cart -->
+                <div class="col-lg-12">
+                    <div class="card border shadow-0">
+                        <div class="m-4">
+                            <h4 class="card-title mb-4">Your shopping cart</h4>
+                            @foreach ($cart as $item)
+                                <div class="row gy-3 mb-4">
+                                    <div class="col-lg-6">
+                                        <div class="me-lg-6">
+                                            <div class="d-flex">
+                                                <img src="{{ asset('Images/Products/' . $item->attributes->image->image_url) }}"
+                                                    class="border rounded me-3" style="width: 96px; height: 96px;" />
+                                                <div class="">
+                                                    <a href="#" class="nav-link">{{ $item->name }}</a>
+                                                    <p class="text-muted">Size:{{ $item->attributes->size }} <br>
                                                         Color: {{ $item->attributes->color }}</p>
-                                                </figcaption>
-                                            </figure>
-                                        </td>
-                                        <td>
-                                            <inpu class="form-control">
-                                                <option>{{ $item->quantity }}</option>
-                                            </inpu>
-                                        </td>
-                                        <td>
-                                            <div class="price-wrap"> <var class="price">EGP {{ $item->price }}</var>
+                                                </div>
                                             </div>
-                                        </td>
-                                        <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist"
-                                                title="" href="{{ route('wishlist-store') }}" class="btn btn-light"
-                                                data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a
-                                                href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
-                                    </tr>
-                                @endforeach
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap">
+                                        <div class="">
+                                            <select style="width: 100px;" class="form-select me-4">
+                                                <option>{{ $item->quantity }}</option>
 
-                            </tbody>
-                        </table>
+                                            </select>
+                                        </div>
+                                        <div class="">
+                                            <text class="h6">EGP {{ $item->quantity * $item->price }}</text> <br />
+                                            <small class="text-muted text-nowrap"> EGP {{ $item->price }}/ per item </small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="col-lg col-sm-6 d-flex justify-content-sm-center justify-content-md-start justify-content-lg-center justify-content-xl-end mb-2">
+                                        <div class="float-md-end">
+                                            <a href="#!" class="btn btn-light border px-2 icon-hover-primary"><i
+                                                    class="fas fa-heart fa-lg px-1 text-secondary"></i></a>
+                                            <a href="#" class="btn btn-light border text-danger icon-hover-danger">
+                                                Remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+
+                        <div class="border-top pt-4 mx-4 mb-4">
+                            <p><i class="fas fa-truck text-muted fa-lg"></i> Free Delivery within 1-2 weeks</p>
+                            <p class="text-muted">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut
+                                aliquip
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </aside>
-            <aside class="col-lg-3">
-                <div class="card mb-3">
+                <!-- cart -->
+                <!-- summary -->
+
+                <!-- summary -->
+            </div>
+            <div class="col-lg-12 mt-5">
+                <div class="card mb-3 border shadow-0">
                     <div class="card-body">
                         <form>
-                            <div class="form-group"> <label>Have coupon?</label>
-                                <div class="input-group"> <input type="text" class="form-control coupon" name=""
-                                        placeholder="Coupon code"> <span class="input-group-append"> <button
-                                            class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
+                            <div class="form-group">
+                                <label class="form-label">Have coupon?</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control border" name=""
+                                        placeholder="Coupon code" />
+                                    <button class="btn btn-light border">Apply</button>
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card shadow-0 border">
                     <div class="card-body">
-                        <dl class="dlist-align">
-                            <dt>Total price:</dt>
-                            <dd class="text-right ml-3">{{ number_format(Cart::getSubTotal(), 2) }}</dd>
-                        </dl>
-                        <dl class="dlist-align">
-                            <dt>Discount:</dt>
-                            <dd class="text-right text-danger ml-3"></dd>
-                        </dl>
-                        <dl class="dlist-align">
-                            <dt>Total:</dt>
-                            <dd class="text-right text-dark b ml-3"><strong></strong></dd>
-                        </dl>
-                        <hr>
-                        <a href="#" class="btn btn-out custom_btn btn-square btn-main" data-abc="true"> Make
-                            Purchase </a>
-                        <a href="#" class="btn custom_btn btn-main mt-2" data-abc="true">Continue Shopping</a>
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-2">Total price:</p>
+                            <p class="mb-2">$329.00</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-2">Discount:</p>
+                            <p class="mb-2 text-success">-$60.00</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-2">TAX:</p>
+                            <p class="mb-2">$14.00</p>
+                        </div>
+                        <hr />
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-2">Total price:</p>
+                            <p class="mb-2 fw-bold">$283.00</p>
+                        </div>
+
+                        <div class="mt-3">
+                            <a href="{{ route('checkout') }}" class="btn btn-success w-100 shadow-0 mb-2"> Make Purchase </a>
+                            <a href="{{ route('show-all-products') }}" class="btn btn-light w-100 border mt-2"> Back to shop </a>
+                        </div>
                     </div>
                 </div>
-            </aside>
+            </div>
         </div>
-    </div>
+    </section>
 @endsection
+
+
+@push('js')
+@endpush

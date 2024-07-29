@@ -11,7 +11,21 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1050;
-            width: 50%;
+            width: 450px;
+            border: #fffcfc;
+
+        }
+
+        .toast {
+            background-color: #fffcfc !important;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .toast-btn {
+            width: 1px !important;
+            height: 2px !important;
         }
     </style>
 @endpush
@@ -144,10 +158,6 @@
                                                     favorite
                                                 </span>
                                             </a>
-
-
-
-                                           
                                             <a href="#" class="icon">
                                                 <span class="material-symbols-outlined">
                                                     visibility
@@ -215,15 +225,15 @@
 
                             </div> --}}
 
-                {{-- </div> --}}
+                    {{-- </div> --}}
 
-                {{-- <div class="pt-5 d-block m-auto text-center">
+                    {{-- <div class="pt-5 d-block m-auto text-center">
                     <button class="btn custom_btn">Show All</button>
                 </div> --}}
 
-            </div>
+                </div>
 
-            {{-- <div class="tab-pane fade" id="best-seller">
+                {{-- <div class="tab-pane fade" id="best-seller">
                 <div class="row justify-content-between mt-5">
                     <div class="col-3 new-arrival">
                         <div class="hover">
@@ -840,13 +850,13 @@
     </main>
 
     <div class="toast-container  p-3">
-        <div id="toast" class="toast align-items-center text-dark bg-secondary border-1 w-100 fade" role="alert"
+        <div id="toast" class="toast align-items-center text-dark border-1 w-100 fade" role="alert"
             aria-live="assertive" aria-atomic="true">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="toast-body">
                     <!-- Message will be inserted here -->
                 </div>
-                <button type="button" class="btn-close " data-bs-dismiss="toast" aria-label="Close"></button>
+                <button type="button" class="btn-close toast-btn" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
     </div>
@@ -857,32 +867,30 @@
 @push('js')
     <script>
         $(document).ready(function() {
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+            });
 
+            $('.addToWishlist').on('click', function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'post',
+                    url: "{{ route('wishlist-store') }}",
+                    data: {
+                        'productId': $(this).attr('data-product-id'),
+                    },
+                    success: function(data) {
+                        $('#toast .toast-body').text(data.msg);
+                        var toastEl = document.getElementById('toast');
+                        var toast = new bootstrap.Toast(toastEl);
+                        toast.show();
 
-                    $('.addToWishlist').on('click', function(e) {
-                        e.preventDefault();
-                        $.ajax({
-                            type: 'post',
-                            url: "{{ route('wishlist-store') }}",
-                            data: {
-                                'productId': $(this).attr('data-product-id'),
-                            },
-                            success: function(data) {
-                                $('#toast .toast-body').text(data.msg);
-                                var toastEl = document.getElementById('toast');
-                                var toast = new bootstrap.Toast(toastEl);
-                                toast.show();
-
-                            },
-                        });
-
-                    });
+                    },
                 });
 
+            });
+        });
     </script>
 @endpush

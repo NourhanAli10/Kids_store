@@ -19,8 +19,7 @@
                     <a class="nav-link text-dark" href="{{ route('product-category', 'babies') }}">Babies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark"
-                        href="{{ route('product-category', 'accessories') }}"">Accessories</a>
+                    <a class="nav-link text-dark" href="{{ route('product-category', 'accessories') }}"">Accessories</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="">Brands</a>
@@ -63,7 +62,13 @@
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle nav-link" href="#" id="navbarDropdownMenuAvatar"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ Auth::user()->name }}
+                                @php
+                                    $fullName = Auth::user()->name;
+                                    $name = explode(' ', $fullName);
+                                    $firstName = $name[0];
+                                @endphp
+                                {{ $firstName }}
+
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                                 <li><a class="dropdown-item" href="{{ route('user-profile') }}">My profile</a></li>
@@ -81,22 +86,38 @@
                             </span> </a>
                         <div class="shopping-cart" id="shopping-cart">
                             <ul class="shopping-cart-items">
-                                @foreach (Cart::getContent() as $item)
-                                    <li class="clearfix">
+                                @if(Cart::getContent()->isNotEmpty())
+                                    @foreach (Cart::getContent() as $item)
+                                        <li class="clearfix">
+                                            <div class="w-100">
+                                                <div class="w-100 d-flex justify_content_between">
+                                                    <p class="m-2">{{ $item->name }}</p>
+                                                    <img class="m-1" src="{{ asset('Images/Products/' . $item->attributes->image->image_url) }}"
+                                                        alt="item1"  />
 
-                                        <div class="d-flex justify_content_between">
-                                            <span class="">{{ $item->name }}</span>
-                                            <img src="{{ asset('Images/Products/'. $item->attributes->image->image_url )}}"
-                                                alt="item1" />
-                                        </div>
+                                                </div>
 
-                                        <p class="item-price">{{ $item->quantity  }} X EGP{{ $item->price }}</p>
+                                            </div>
 
-                                    </li>
-                                @endforeach
+                                            <p class="item-price">{{ $item->quantity }} X EGP{{ $item->price }}</p>
+
+                                        </li>
+                                    @endforeach
 
                             </ul>
-                            <a href="{{ route('cart') }}" class="button">Checkout</a>
+                                <a href="{{ route('cart') }}" class="button">Checkout</a>
+                                @else
+                                <div class="text-center m-2 w-100">
+                                    <p>0 items</p>
+                                    <p>Your cart is empty</p>
+                                </div>
+
+                                <a href="{{ route('show-all-products') }}" class="button">Continue shopping</a>
+
+
+
+                                @endif
+
                         </div> <!-- end shopping-cart -->
                     </li>
                 </ul>

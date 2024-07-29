@@ -4,7 +4,7 @@
 
 @section('content')
     <main>
-        <section class="container ">
+        <section class="container mb-5 ">
             <div class="row register mt-5">
                 <div class="col-6">
                     <img src="{{ asset('front_assets/Images/kid.png') }}">
@@ -14,16 +14,16 @@
                     @csrf
                     <h3 class="mb-3 text-center">Registration Form</h3>
                     <div class="mb-4">
-                        <label for="first_name" class="form-label">First
+                        <label for="name" class="form-label">First
                             name</label>
-                        <input type="text" class="form-control input" id="first_name" name="first-name"
-                            value="{{ old('first-name') }}">
-                        @error('first-name')
+                        <input type="text" class="form-control input" id="name" name="name"
+                            value="{{ old('name') }}">
+                        @error('name')
                             <p class="text-danger mt-2">{{ $message }}</p>
                         @enderror
                     </div>
 
-                    <div class="mb-4">
+                    {{-- <div class="mb-4">
                         <label for="last_name" class="form-label">last
                             name</label>
                         <input type="name" class="form-control input" id="last_name" name="last-name"
@@ -31,7 +31,7 @@
                         @error('last-name')
                             <p class="text-danger mt-2  ml-3">{{ $message }}</p>
                         @enderror
-                    </div>
+                    </div> --}}
 
                     <div class="mb-4">
                         <label for="email" class="form-label">Email</label>
@@ -65,14 +65,14 @@
                             <p class="text-danger mt-2">{{ $message }}</p>
                         @enderror
                     </div>
-                    <!-- Checkbox -->
+                    {{-- <!-- Checkbox -->
                     <div class="form-check d-flex mt-4">
                         <input class="form-check-input me-2" type="checkbox" value id="registerCheck" checked
                             aria-describedby="registerCheckHelpText" />
                         <label class="form-check-label" for="registerCheck">
                             I have read and agree to the terms
                         </label>
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn mt-4">Register</button>
 
                     <div class="mt-4 d-flex justify-content-center">
