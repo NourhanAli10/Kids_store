@@ -465,7 +465,7 @@
                         </div>
                         <div class="col">
                             <div class="text-center m-2 ">
-                                <button type="submit" class="btn custom-btn">Procced</button>
+                                <button type="submit" class="btn custom_btn">Procced</button>
                             </div>
                         </div> <!-- end col -->
 
@@ -478,7 +478,7 @@
 
                 <div class="row my-4">
                     <div class="col">
-                        <a href="ecommerce-products.html" class="btn btn-link text-muted">
+                        <a href="{{ route('show-all-products') }}" class="btn custom_btn text-muted">
                             <i class="mdi mdi-arrow-left me-1"></i> Continue Shopping </a>
                     </div> <!-- end col -->
 

@@ -87,6 +87,7 @@
                         <div class="shopping-cart" id="shopping-cart">
                             <ul class="shopping-cart-items">
                                 @if(Cart::getContent()->isNotEmpty())
+
                                     @foreach (Cart::getContent() as $item)
                                         <li class="clearfix">
                                             <div class="w-100">

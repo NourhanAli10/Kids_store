@@ -103,9 +103,6 @@
                     </div>
 
                     <hr>
-
-
-
                     <div class="row">
                         <div class="col-md-3">
                             <input type="number" name="quantity" class="form-control pt-3" value="1">
@@ -116,7 +113,6 @@
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <button type="submit" class="btn addBtn btn-block">Add to cart</button>
                         </div>
-
 
                     </div>
                 </form>

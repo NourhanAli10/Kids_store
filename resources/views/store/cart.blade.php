@@ -131,8 +131,8 @@
                         </div>
 
                         <div class="mt-3">
-                            <a href="{{ route('checkout') }}" class="btn btn-success w-100 shadow-0 mb-2"> Make Purchase </a>
-                            <a href="{{ route('show-all-products') }}" class="btn btn-light w-100 border mt-2"> Back to shop </a>
+                            <a href="{{ route('checkout') }}" class="btn custom_btn w-100 shadow-0 mb-2"> Make Purchase </a>
+                            <a href="{{ route('show-all-products') }}" class="btn btn-light w-100 border-rounded mt-2"> Back to shop </a>
                         </div>
                     </div>
                 </div>

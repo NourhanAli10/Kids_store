@@ -198,38 +198,47 @@
 
                             </thead>
                             <tbody>
-                                @foreach ($products as $product)
-                                    <tr>
-                                        <td width="45%">
-                                            <div class="display-flex align-center">
-                                                <div class="img-product">
-                                                    <img src="{{ asset('Images/products/' .$product->images->first()->image_url) }}"
-                                                        alt="" class="mCS_img_loaded" width="150px" height="100px">
+                                @if ($products->count() > 0)
+                                    @foreach ($products as $product)
+                                        <tr>
+                                            <td width="45%">
+                                                <div class="display-flex align-center">
+                                                    <div class="img-product">
+                                                        <img src="{{ asset('Images/products/' . $product->images->first()->image_url) }}"
+                                                            alt="" class="mCS_img_loaded" width="150px"
+                                                            height="100px">
+                                                    </div>
+                                                    <div class="name-product">
+                                                        {{ $product->name }}
+                                                    </div>
                                                 </div>
-                                                <div class="name-product">
-                                                    {{ $product->name }}
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td width="15%" class="price">{{ $product->price }} EGP</td>
-                                        <td width="15%"><span class="in-stock-box">
-                                                @php
-                                                    echo $product->quantity > 0 ? 'In Stock' : 'Out of Stock';
-                                                @endphp
+                                            </td>
+                                            <td width="15%" class="price">{{ $product->price }} EGP</td>
+                                            <td width="15%"><span class="in-stock-box">
+                                                    @php
+                                                        echo $product->quantity > 0 ? 'In Stock' : 'Out of Stock';
+                                                    @endphp
 
-                                            </span></td>
-                                        <td width="15%">
-                                            <button class="round-black-btn small-btn">Add to Cart</button>
-                                        </td>
-                                        <td width="10%" class="text-center"><a href="#"
-                                                class="trash-icon removeFromWishlist"
-                                                data-product-id = {{ $product->id }}><i class="far fa-trash-alt"></i></a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                                </span></td>
+                                            {{-- <td width="15%">
+                                                <button class="round-black-btn small-btn">Add to Cart</button>
+                                            </td> --}}
+                                            <td width="10%" class="text-center"><a href="#"
+                                                    class="trash-icon removeFromWishlist"
+                                                    data-product-id={{ $product->id }}><i class="far fa-trash-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
 
                             </tbody>
+                            @else
+                                <div class="text-center">
+                                    <h3>No products found</h3>
+                                </div>
+                                @endif
+
                         </table>
+
                     </div>
                 </div>
             </div>

@@ -32,6 +32,7 @@ class CartController extends Controller
             'color' => $product->colors->find($request->color_id)->name,
             'image' => $product->images[0],
         ];
+
         if (Auth::check()) {
             $data['user_id'] = Auth::id();
             CartModel::create($data);

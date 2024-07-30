@@ -174,7 +174,7 @@
                         @enderror
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="phone">Address 1</label>
                         <input type="phone" name="phone" id="phone" class="form-control" value="" disabled>
                     </div>
@@ -187,7 +187,7 @@
                     <div class="form-group">
                         <label for="city">City</label>
                         <input type="text" name="city" id="city" class="form-control" value="" disabled>
-                    </div>
+                    </div> --}}
 
 
                     <button type="submit" class="btn btn-primary">Save changes</button>
@@ -220,7 +220,7 @@
                     <div class="form-group">
                         <label for="floor">Floor</label>
                         <input type="number" name="floor" id="floor" class="form-control"
-                            value="{{ $user->phone }}" required>
+                            value="" required>
                     </div>
 
                     <div class="form-group">

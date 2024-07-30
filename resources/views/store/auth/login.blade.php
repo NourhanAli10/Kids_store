@@ -6,7 +6,6 @@
     <main>
         <section class="container">
             <div class="login-section m-auto ">
-                <h4 class ="text-center "> welcome to Reino kids</h4>
                 <!-- Pills content -->
                 <div class="tab-content m-5">
                     <div class="m-5">
@@ -34,7 +33,7 @@
                                 <div class="col-md-6 d-flex justify-content-start">
                                     <!-- Checkbox -->
                                     <div class="form-check mb-3 mb-md-0 remember-me">
-                                        <input class="form-check-input" type="checkbox" value="" id="loginCheck" />
+                                        <input class="form-check-input" name="remember" type="checkbox" value="" id="loginCheck" />
                                         <label class="form-check-label" for="loginCheck"> Remember me </label>
                                     </div>
                                 </div>
